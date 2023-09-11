@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/noticias/{id}', 'App\Http\Controllers\NoticiaController@index');
 Route::get('/noticias/{category}', 'App\Http\Controllers\NoticiaController@show');
+Route::get('/noticias/json/{id}', [App\Http\Controllers\NoticiaController::class, 'showJson']);

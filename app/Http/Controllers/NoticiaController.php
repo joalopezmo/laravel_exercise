@@ -106,4 +106,22 @@ class NoticiaController extends Controller
         return redirect()->route('noticias.index')
             ->with('success', 'Noticia deleted successfully');
     }
+
+    //funcion para mostrar en json una noticia por id
+   
+
+    public function showJson($id)
+    {
+        // $noticia = Noticia::find($id);
+        // $data = [
+        //     'id' => $noticia->id,
+        //     'title' => $noticia->title,
+        //     'autor' => $noticia->autor,
+        //     'publication_date' => $noticia->publication_date,
+        //     'content' => $noticia->content,
+        //     'image' => $noticia->image,
+        //     'category' => $noticia->category,
+        // ];
+        $data = Noticia::find($id);
+        return response()->json($data, 200); }
 }
